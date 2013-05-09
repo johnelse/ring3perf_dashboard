@@ -11,7 +11,10 @@ _jira = JIRA(options={"server": _config.jira_url},
 @route("/")
 @view("main")
 def index():
-    groups = _jira.search_issues("'engineering tags' ~ 'ring3perfgroup'")
+    groups = _jira.search_issues("'assignee' = '%s' \
+            AND 'project' = 'CA' \
+            AND 'engineering tags' ~ 'ring3perfgroup'"
+            % _config.jira_username)
     return dict(url=_config.jira_url, groups=groups)
 
 if __name__ == "__main__":
