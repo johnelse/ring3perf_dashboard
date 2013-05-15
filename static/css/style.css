@@ -1,0 +1,23 @@
+p, a, li {
+    font-family: arial;
+}
+
+a:link, a:visited {
+    color: #0000FF;
+}
+
+a:active, a:hover {
+    color: #FF0000;
+}
+
+.maintable {
+    font-family: arial;
+    width: 100%;
+    border-style: collapse;
+}
+
+.maintable td, .maintable th {
+    font-size: 1.2em;
+    border: 1px solid #98BF21;
+    padding: 3px 2px 2px 7px;
+}

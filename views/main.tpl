@@ -1,10 +1,11 @@
 <html>
   <head>
     <title>Ring3 performance issues</title>
+    <link rel="stylesheet" type="text/css" href="static/css/style.css">
   </head>
   <body>
     <h1>Ring3 Performance Dashboard</h1>
-    <table border="1" width="100%">
+    <table class="maintable">
 %for group in groups:
       <tr>
         <td colspan="3">
