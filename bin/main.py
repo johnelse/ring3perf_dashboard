@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-from bottle import route, run, view
+from bottle import route, run, static_file, view
 from jira.client import JIRA
 from ring3perf_dashboard.lib import config
 
@@ -16,6 +16,10 @@ def index():
             AND 'engineering tags' ~ 'ring3perfgroup'"
             % _config.jira_username)
     return dict(url=_config.jira_url, groups=groups)
+
+@route("/static/<path:path>")
+def static(path):
+    return static_file(path, root="static")
 
 if __name__ == "__main__":
     run(host=_config.server_ip, port=8080)
